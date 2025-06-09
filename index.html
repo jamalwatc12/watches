@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAMAL-CLASSICS - Buy Value, Get Quality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a237e;
+            --primary-maroon: #800020;
+            --light-grey: #f5f5f5;
+            --dark-grey: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-grey);
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-maroon));
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            font-size: 1rem;
+            margin-left: 10px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-maroon);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 3rem 0;
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
+
+        .products {
+            padding: 2rem 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-grey);
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-maroon);
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.7rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: var(--primary-maroon);
+        }
+
+        /* Featured Product Styling */
+        .featured-product {
+            grid-column: span 2;
+        }
+
+        .featured-product .product-img {
+            height: 300px;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary-maroon);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background: var(--white);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .cart-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            padding: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            margin-right: 1rem;
+        }
+
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--primary-maroon);
+            margin-bottom: 0.5rem;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff4444;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .cart-total {
+            padding: 1.5rem;
+            border-top: 1px solid #eee;
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-maroon);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background: var(--primary-blue);
+        }
+
+        .cart-icon {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-blue);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .cart-icon:hover {
+            background: var(--primary-maroon);
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--primary-maroon);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .contact-fab {
+            position: fixed;
+            bottom: 8rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .fab-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .call-btn {
+            background: var(--primary-blue);
+        }
+
+        footer {
+            background: var(--dark-grey);
+            color: var(--white);
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 0.8rem;
+            color: var(--primary-maroon);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 0.7rem;
+            }
+
+            .hero {
+                height: 50vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .featured-product {
+                grid-column: span 1;
+            }
+
+            .featured-product .product-img {
+                height: 200px;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .cart-sidebar.active {
+                right: 0;
+            }
+
+            .contact-fab {
+                bottom: 7rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+                margin-top: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fab-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    JAMAL-CLASSICS <span>Buy Value, Get Quality</span>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Premium Watches for Men & Women</h1>
+                <p>Discover our exquisite collection of timepieces that combine elegance and precision.</p>
+                <a href="#products" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Collection</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About JAMAL-CLASSICS</h2>
+            <div class="about-content">
+                <p>JAMAL-CLASSICS is a premier online destination for high-quality watches for both men and women. Our motto "Buy Value, Get Quality" reflects our commitment to providing exceptional timepieces at competitive prices.</p>
+                <p>Each watch in our collection is carefully selected to ensure it meets our standards of craftsmanship, durability, and style. Whether you're looking for a classic timepiece or a modern statement watch, we have something for every taste and occasion.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>JAMAL-CLASSICS</h3>
+                    <p>Your trusted source for premium watches. Buy Value, Get Quality.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact-info">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +256 761 761347</p>
+                    <p><i class="fas fa-envelope"></i> muwangaidd@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Online Based</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 JAMAL-CLASSICS. All Rights Reserved. DESIGNED BY SHAFT TECH</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-total">
+            Total: <span id="cartTotal">UGX 0</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Checkout via WhatsApp</button>
+    </div>
+
+    <!-- Cart Icon -->
+    <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- Contact FAB -->
+    <div class="contact-fab">
+        <a href="https://wa.me/256761761347" class="fab-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+256761761347" class="fab-btn call-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+
+            // Cart functionality
+            const cartIcon = document.getElementById('cartIcon');
+            const cartSidebar = document.getElementById('cartSidebar');
+            const closeCart = document.getElementById('closeCart');
+            const productGrid = document.getElementById('productGrid');
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            
+            let cart = [];
+
+            // PRODUCT CONFIGURATION WITH POSITIONING
+            const productConfig = {
+                // Featured products (appear first, double width)
+                featured: {
+                    1: { 
+                        price: 450000,
+                        name: "Signature Chronograph",
+                        position: 'third'
+                    },
+                    50: {
+                        price: 380000,
+                        name: "Luxury Automatic",
+                        position: 'first'
+                    },
+                    100: {
+                        price: 520000,
+                        name: "Diamond Edition",
+                        position: 'first'
+                    }
+                },
+                
+                // Highlighted products (special styling)
+                highlighted: {
+                    2: { price: 280000, name: "Classic Leather" },
+                    5: { price: 320000, name: "Moonphase Special" },
+                    10: { price: 275000, name: "Business Elite" },
+                    25: { price: 295000, name: "Executive Gold" }
+                },
+              /** .....
+               
+               ..
+               .
+
+
+
+
+
+
+
+
+
+
+               .....
+               .
+               .
+               .
+               .
+               .
+               .
+               .
+               .
+               .**/
+                // Regular priced products
+                regularPrices: {
+                    3: 195,
+                    4: 210000,
+                    6: 175000,
+                    7: 230000,
+                    8: 165000,
+                    9: 290000,
+                    20: 245000,
+                    1000: 500000
+                }
+            };
+
+
+          /**  .
+
+            .
+            .
+            .
+            .
+
+            .
+            .
+
+            .
+            .
+
+            .
+            .
+
+            .
+            .
+            .
+
+            .**/
+            // Generate products with controlled positioning
+            function generateProducts() {
+                // 1. Add featured products first
+                for (const [id, details] of Object.entries(productConfig.featured)) {
+                    createProductCard(id, details, true);
+                }
+
+                // 2. Add remaining products
+                for (let i = 1; i <= 152; i++) {
+                    // Skip already added featured products
+                    if (productConfig.featured[i]) continue;
+                    
+                    const details = productConfig.highlighted[i] || {
+                        price: productConfig.regularPrices[i] || 
+                              Math.floor(Math.random() * (400000 - 100000 + 1)) + 100000,
+                        name: `Watch Model ${i}`
+                    };
+                    
+                    createProductCard(i, details, false);
+                }
+            }
+
+            function createProductCard(id, details, isFeatured) {
+                const formattedPrice = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'UGX',
+                    minimumFractionDigits: 0
+                }).format(details.price).replace('UGX', 'UGX ');
+
+                const productCard = document.createElement('div');
+                productCard.className = `product-card ${isFeatured ? 'featured-product' : ''}`;
+                productCard.innerHTML = `
+                    ${isFeatured ? '<span class="featured-badge">FEATURED</span>' : ''}
+                    <div class="product-img">
+                        <img src="1 (${id}).jpg" alt="${details.name}" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(details.name)}'">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${details.name}</h3>
+                        <p class="product-price">${formattedPrice}</p>
+                        <button class="add-to-cart" 
+                                data-id="${id}" 
+                                data-name="${details.name}" 
+                                data-price="${details.price}" 
+                                data-img="1(${id}).jpg">
+                            Add to Cart
+                        </button>
+                    </div>
+                `;
+                
+                // Insert featured products at beginning
+                if (isFeatured && details.position === 'first') {
+                    productGrid.insertBefore(productCard, productGrid.firstChild);
+                } else {
+                    productGrid.appendChild(productCard);
+                }
+
+                // Add event listener to the new button
+                productCard.querySelector('.add-to-cart').addEventListener('click', addToCart);
+            }
+
+            // Add to cart function
+            function addToCart(e) {
+                const button = e.target;
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const img = button.getAttribute('data-img');
+
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        img,
+                        quantity: 1
+                    });
+                }
+
+                updateCart();
+                cartSidebar.classList.add('active');
+            }
+
+            // Update cart function
+            function updateCart() {
+                // Update cart count
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+
+                // Update cart items
+                cartItems.innerHTML = '';
+                let total = 0;
+
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<p>Your cart is empty</p>';
+                } else {
+                    cart.forEach(item => {
+                        const itemTotal = item.price * item.quantity;
+                        total += itemTotal;
+
+                        const formattedPrice = new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'UGX',
+                            minimumFractionDigits: 0
+                        }).format(item.price).replace('UGX', 'UGX ');
+
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'cart-item';
+                        itemElement.innerHTML = `
+                            <div class="cart-item-img">
+                                <img src="${item.img}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/100x100?text=Watch'">
+                            </div>
+                            <div class="cart-item-details">
+                                <h4 class="cart-item-title">${item.name}</h4>
+                                <p class="cart-item-price">${formattedPrice} x ${item.quantity}</p>
+                                <button class="remove-item" data-id="${item.id}">Remove</button>
+                            </div>
+                        `;
+                        cartItems.appendChild(itemElement);
+                    });
+
+                    // Add event listeners to remove buttons
+                    document.querySelectorAll('.remove-item').forEach(button => {
+                        button.addEventListener('click', removeFromCart);
+                    });
+                }
+
+                // Update total
+                const formattedTotal = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'UGX',
+                    minimumFractionDigits: 0
+                }).format(total).replace('UGX', 'UGX ');
+                cartTotal.textContent = formattedTotal;
+            }
+
+            // Remove from cart function
+            function removeFromCart(e) {
+                const id = e.target.getAttribute('data-id');
+                cart = cart.filter(item => item.id !== id);
+                updateCart();
+            }
+
+            // Checkout function
+            checkoutBtn.addEventListener('click', function() {
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+
+                let message = "Hello JAMAL-CLASSICS,\n\nI'd like to purchase the following items:\n\n";
+                
+                cart.forEach(item => {
+                    message += `- ${item.name} (Qty: ${item.quantity})\n`;
+                });
+
+                message += `\nTotal: ${cartTotal.textContent}\n\nPlease confirm availability and payment details.`;
+
+                // Encode the message for WhatsApp URL
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/256761761347?text=${encodedMessage}`, '_blank');
+            });
+
+            // Toggle cart sidebar
+            cartIcon.addEventListener('click', function() {
+                cartSidebar.classList.add('active');
+            });
+
+            closeCart.addEventListener('click', function() {
+                cartSidebar.classList.remove('active');
+            });
+
+            // Generate products on page load
+            generateProducts();
+        });
+    </script>
+</body>
+</html>
