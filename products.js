@@ -1,13 +1,13 @@
 // products.js - Product data configuration
 const productConfig = {
+
+
+
+                             //                        P O S I T I O N  
+
+
+            
     featured: {
-        
-        
-        
-                                 //P O S I T I O N I N G          H E R E      
-        
-        
-        
         1: {
             id: 1,
             name: "Signature Chronograph",
@@ -39,17 +39,7 @@ const productConfig = {
 
 
 
-
-
-
-
-
-
-
-
-                                   //P R O D U C T S         H E R E
-
-
+                                           //            P R O D U C T S  H E R E 
 
 
 
@@ -60,24 +50,33 @@ const productConfig = {
     highlighted: {
         2: {
             id: 2,
-            name: "Naviforce leather",
-            price: 130000,
+            name: "Classic Leather",
+            price: 280000,
             description: "Timeless leather-strapped watch",
             image: "Naviforce.jpg"
         },
-
-
-        {
-        
-        
+        5: {
+            id: 5,
+            name: "Moonphase Special",
+            price: 320000,
+            description: "Watch with moonphase complication",
+            image: "1 (1).jpg"
+        },
+        10: {
             id: 10,
             name: "Business Elite",
             price: 275000,
             description: "Professional watch for business occasions",
-            image: "watch-10.jpg"
+            image: "1 (10).jpg"
         },
-
-
+        25: {
+            id: 25,
+            name: "Executive Gold",
+            price: 295000,
+            description: "Gold-plated executive timepiece",
+            image: "watch-25.jpg"
+        }
+    },
     regularProducts: [
         {
             id: 3,
@@ -100,23 +99,6 @@ const productConfig = {
             description: "Retro-inspired vintage watch",
             image: "watch-6.jpg"
         },
-
-
-{
-            id: 4,
-            name: "Minimalist Design",
-            price: 210000,
-            description: "Sleek minimalist watch design",
-            image: "watch-4.jpg"
-        },
-
-
-
-
-
-
-
-        
         {
             id: 7,
             name: "Modern Classic",
@@ -124,16 +106,6 @@ const productConfig = {
             description: "Contemporary take on classic design",
             image: "watch-7.jpg"
         },
-
-{
-            id: 4,
-            name: "Minimalist Design",
-            price: 210000,
-            description: "Sleek minimalist watch design",
-            image: "watch-4.jpg"
-        },
-
-        
         {
             id: 8,
             name: "Everyday Wear",
@@ -146,7 +118,7 @@ const productConfig = {
             name: "Limited Edition",
             price: 290000,
             description: "Exclusive limited edition timepiece",
-            image: "1 (1).jpg"
+            image: "watch-9.jpg"
         },
         {
             id: 20,
