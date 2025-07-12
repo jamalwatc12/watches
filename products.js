@@ -73,6 +73,16 @@ const productConfig = {
             description: "Professional watch for business occasions",
             image: "watch-10.jpg"
         },
+
+{
+            id: 4,
+            name: "Minimalist Design",
+            price: 210000,
+            description: "Sleek minimalist watch design",
+            image: "watch-4.jpg"
+        },
+
+        
         25: {
             id: 25,
             name: "Executive Gold",
