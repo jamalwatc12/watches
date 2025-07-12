@@ -1,4 +1,4 @@
-u// products.js - Product data configuration
+// products.js - Product data configuration
 const productConfig = {
     featured: {
         
@@ -77,23 +77,7 @@ const productConfig = {
             image: "watch-10.jpg"
         },
 
-{
-            id: 4,
-            name: "Minimalist Design",
-            price: 210000,
-            description: "Sleek minimalist watch design",
-            image: "watch-4.jpg"
-        },
 
-        
-        25: {
-            id: 25,
-            name: "Executive Gold",
-            price: 295000,
-            description: "Gold-plated executive timepiece",
-            image: "watch-25.jpg"
-        }
-    },
     regularProducts: [
         {
             id: 3,
