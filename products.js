@@ -65,13 +65,7 @@ const productConfig = {
             description: "Timeless leather-strapped watch",
             image: "Naviforce.jpg"
         },
-        5: {
-            id: 5,
-            name:"AP",
-            price: 450k,
-            description: "Watch with moonphase complication",
-            image: "e.jpg"
-        },
+        
         10: {
             id: 10,
             name: "Business Elite",
