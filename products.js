@@ -1,4 +1,4 @@
-// products.js - Product data configuration
+u// products.js - Product data configuration
 const productConfig = {
     featured: {
         
@@ -65,8 +65,11 @@ const productConfig = {
             description: "Timeless leather-strapped watch",
             image: "Naviforce.jpg"
         },
+
+
+        {
         
-        10: {
+        
             id: 10,
             name: "Business Elite",
             price: 275000,
