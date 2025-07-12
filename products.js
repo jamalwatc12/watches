@@ -113,6 +113,23 @@ const productConfig = {
             description: "Retro-inspired vintage watch",
             image: "watch-6.jpg"
         },
+
+
+{
+            id: 4,
+            name: "Minimalist Design",
+            price: 210000,
+            description: "Sleek minimalist watch design",
+            image: "watch-4.jpg"
+        },
+
+
+
+
+
+
+
+        
         {
             id: 7,
             name: "Modern Classic",
@@ -120,6 +137,16 @@ const productConfig = {
             description: "Contemporary take on classic design",
             image: "watch-7.jpg"
         },
+
+{
+            id: 4,
+            name: "Minimalist Design",
+            price: 210000,
+            description: "Sleek minimalist watch design",
+            image: "watch-4.jpg"
+        },
+
+        
         {
             id: 8,
             name: "Everyday Wear",
