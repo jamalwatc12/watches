@@ -1,6 +1,13 @@
 // products.js - Product data configuration
 const productConfig = {
     featured: {
+        
+        
+        
+                                 //P O S I T I O N I N G          H E R E      
+        
+        
+        
         1: {
             id: 1,
             name: "Signature Chronograph",
@@ -26,6 +33,30 @@ const productConfig = {
             position: 'third'
         }
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   //P R O D U C T S         H E R E
+
+
+
+
+
+
+
+
+    
     highlighted: {
         2: {
             id: 2,
