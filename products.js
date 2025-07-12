@@ -60,10 +60,10 @@ const productConfig = {
     highlighted: {
         2: {
             id: 2,
-            name: "Classic Leather",
-            price: 280000,
+            name: "Naviforce leather",
+            price: 130000,
             description: "Timeless leather-strapped watch",
-            image: "watch-2.jpg"
+            image: "Naviforce.jpg"
         },
         5: {
             id: 5,
