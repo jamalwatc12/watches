@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         productCard.innerHTML = `
             ${isFeatured ? '<span class="featured-badge">FEATURED</span>' : ''}
             <div class="product-img">
-                <img src="${product.image}" alt="${product.name}" 
+                <img src="${image}" alt="${product.name}" 
                      onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(product.name)}'">
             </div>
             <div class="product-info">
