@@ -26,13 +26,34 @@ const productConfig = {
             position: 'third'
         }
     },
+
+
+
+
+
+
+
+
+                        //       P R O D U C T S      H E R E
+
+
+
+
+
+
+
+
+
+
+
+    
     highlighted: {
         2: {
             id: 2,
-            name: "Classic Leather",
+            name: "NAVIFORCE",
             price: 280000,
             description: "Timeless leather-strapped watch",
-            image: "watch-2.jpg"
+            image: "Naviforce.jpg"
         },
         5: {
             id: 5,
