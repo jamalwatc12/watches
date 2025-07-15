@@ -1,11 +1,6 @@
 // products.js - Product data configuration
 const productConfig = {
-
-
-
-                             //                        P O S I T I O N  
-
-
+                             //                    DONT TAPM    P O S I T I O N 
             
     featured: {
         1: {
@@ -39,7 +34,12 @@ const productConfig = {
 
 
 
-                                           //            P R O D U C T S  H E R E 
+  
+
+
+
+
+                                           //            P R O D U C T S      H E R E 
 
 
 
