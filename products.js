@@ -60,7 +60,7 @@ const productConfig = {
             name: "Moonphase Special",
             price: 320000,
             description: "Watch with moonphase complication",
-            image: "satch  .jpg"
+            image: "satch.jpg"
         },
         10: {
             id: 10,
